@@ -1,0 +1,55 @@
+.form-control {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #b6b6b6;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+label {
+  font-weight: bold;
+  font-family: "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-bottom: 10px;
+  display: block;
+  align-items: flex-start;
+  justify-content: flex-start;
+  float: left;
+  margin-right: 20px;
+  color: #333;
+}
+
+.error {
+  color: #c00;
+  font-size: 12px;
+  font-family: "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.form-container {
+  background-color: #f2f2f2;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #b6b6b6;
+}
+
+.order-btn {
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  margin-top: 20px;
+  font-family: "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+  .form-control {
+    width: 90%;
+  }
+}

@@ -1,0 +1,18 @@
+.box-one {
+    background-color: #EB5753;
+    padding: 10px;
+    height: 100px; 
+    width: 100px;
+    border: 20px solid #9B51E0; 
+    margin: 100px;
+}
+
+.box-two {
+    background-color: #2D29CD;
+    border: 0 solid #27A; 
+    padding: 10px; 
+    height: 100px; 
+    width: 100px; 
+    border: 30px solid #9b51E0;
+    margin: 70px; 
+}

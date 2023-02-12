@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration Form</title>
+  </head>
+  <style>
+    /* Custom styles for form elements */
+    .form-control {
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Custom styles for labels */
+    label {
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: block;
+      align-items: flex-start;
+      justify-content: flex-start;
+      float: left;
+      margin-right: 20px;
+    }
+
+    /* Styles for error messages */
+    .error {
+      color: red;
+      font-size: 12px;
+    }
+
+    /* Custom styles for form container */
+    .form-container {
+      background-color: #f2f2f2;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
+
+    /* Custom styles for form header */
+    .form-header {
+      text-align: center;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    /* Custom styles for submit button */
+    .submit-btn {
+      background-color: grey;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      align-items: center;
+      justify-content: flex-end;
+      display: flex;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media only screen and (max-width: 600px) {
+      .form-control {
+        width: 90%;
+      }
+    }
+  </style>
+  <body>
+    <div>
+      <h2>Student Registration Form SSCBS</h2>
+      <form>
+        <label for="name">Full Name:</label>
+        <input type="text" name="name" id="name" class="form-control" />
+        <div id="name-error" style="color: red"></div>
+
+        <label for="rollNumber">Roll Number:</label>
+        <input type="number" id="roll" name="roll" class="form-control" />
+        <div id="roll-error" style="color: red"></div>
+
+        <label for="dob">Date of Birth: </label>
+        <input type="date" id="dob" name="dob" class="form-control" />
+        <div id="dob-error" class="error-message"></div>
+
+        <label for="gender">Gender:</label>
+        <input
+          type="radio"
+          id="male"
+          name="gender"
+          value="male"
+          class="form-control" />
+        <label for="male">Male</label>
+
+        <input
+          type="radio"
+          id="female"
+          name="gender"
+          value="female"
+          class="form-control" />
+        <label for="female">Female</label>
+
+        <input
+          type="radio"
+          id="other"
+          name="gender"
+          value="other"
+          class="form-control" />
+        <label for="other">Other</label>
+        <div id="gender-error" style="color: red"></div>
+                        3
+        <label for="course">Course:</label>
+        <select id="course" name="course" class="form-control" required>
+          <option value="Course">Select a course</option>
+          <option value="Science">BSC</option>
+          <option value="Business">BMA</option>
+        </select>
+        <button type="submit" class="form-control">Submit</button>
+      </form>
+    </div>
+    <script>
+      function validateName() {
+        var name = document.getElementById("name").value;
+        var nameError = document.getElementById("name-error");
+
+        if (!name) {
+          nameError.innerHTML = "Please enter your full name";
+          return false;
+        }
+        nameError.innerHTML = "";
+        return true;
+      }
+
+      function validateRollNumber() {
+        var roll = document.getElementById("roll").value;
+        var rollError = document.getElementById("roll-error");
+
+        if (!roll) {
+          rollError.innerHTML = "Please enter a valid roll number";
+          return false;
+        } else if (isNaN(roll) || roll.toString().length !== 7) {
+          rollError.innerHTML = "Roll number must be a 7 digit number";
+          return false;
+        }
+
+        rollError.innerHTML = "";
+        return true;
+      }
+
+      function validateGender() {
+        var gender = document.querySelector('input[name="gender"]:checked');
+        var genderError = document.getElementById("gender-error");
+
+        if (!gender) {
+          genderError.innerHTML = "Please select your gender";
+          return false;
+        }
+
+        genderError.innerHTML = "";
+        return true;
+      }
+
+      var form = document.querySelector("form");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        var isValidName = validateName();
+        var isValidRoll = validateRollNumber();
+        var isValidGender = validateGender();
+
+        if (isValidName && isValidRoll && isValidGender) {
+          alert("Form submitted successfully");
+        }
+      });
+    </script>
+  </body>
+</html>

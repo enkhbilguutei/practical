@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="order.css" />
+    <script type="text/javascript" src="order.js"></script>
+    <title>Order Form</title>
+  </head>
+
+  <body>
+    <div class="form-container">
+      <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" class="form-control" />
+        <div id="username-error" style="color: red"></div>
+
+        <label for="burgerQty">Burger Quantity:</label>
+        <input
+          type="number"
+          id="burgerQty"
+          name="burgerQty"
+          class="form-control" />
+
+        <label for="softDrink">Soft Drink:</label>
+        <select id="softDrink" name="softDrink" class="form-control">
+          <option value="Coke">Coke</option>
+          <option value="Pepsi">Pepsi</option>
+          <option value="Sprite">Sprite</option>
+          <option value="Fanta">Fanta</option>
+        </select>
+
+        <button type="submit" class="order-btn" onclick="submitOrder()">
+          Submit
+        </button>
+      </form>
+      <div id="receipt" style="display: none">
+        <p>Here is your Order Receipt:</p>
+        <p>Username: <span id="receipt-username"></span></p>
+        <p>Burger Quantity: <span id="receipt-burger-qty"></span></p>
+        <p>Soft Drink: <span id="receipt-soft-drink"></span></p>
+        <p>Total Cost: $<span id="receipt-total-cost"></span></p>
+      </div>
+    </div>
+  </body>
+</html>
