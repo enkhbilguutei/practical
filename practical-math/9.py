@@ -12,7 +12,7 @@ print("Eigenvalues of A:", eigenvalues)
 
 # check if A is diagonalizable
 if len(eigenvectors) == A.shape[0]:
-    print("A is diagonalizable.")
+    print("A is diagnosizble121212.")
 else:
     print("A is not diagonalizable.")
 
