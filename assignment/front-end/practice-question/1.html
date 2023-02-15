@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket Reservation</title>
+  </head>
+  <body>
+    <form id="ticket-form" action="#" method="post">
+      <label for="tourist-name">Tourist Name (20 characters max):</label>
+      <input type="text" id="tourist-name" name="tourist-name" maxlength="20" />
+
+      <label for="tourist-age">Tourist Age:</label>
+      <select id="tourist-age" name="tourist-age">
+        <option value="" disabled selected>Select age group</option>
+        <option value="child">Child</option>
+        <option value="adult">Adult</option>
+        <option value="senior-citizen">Senior Citizen</option>
+      </select>
+
+      <label for="mode-of-travel">Mode of Travel:</label>
+      <select id="mode-of-travel" name="mode-of-travel">
+        <option value="" disabled selected>Select mode of travel</option>
+        <option value="by-road">By Road</option>
+        <option value="by-air">By Air</option>
+      </select>
+
+      <button type="submit">Submit</button>
+    </form>
+    <script>
+      const form = document.getElementById("ticket-form");
+      const nameInput = document.getElementById("tourist-name");
+      const ageInput = document.getElementById("tourist-age");
+      const travelInput = document.getElementById("mode-of-travel");
+
+      form.addEventListener("submit", function (event) {
+        // prevent form submission if validation fails
+        if (
+          !validateName(nameInput.value) ||
+          !validateAge(ageInput.value) ||
+          !validateTravel(travelInput.value)
+        ) {
+          event.preventDefault();
+        }
+      });
+
+      function validateName(name) {
+        // check if name is not blank and is 20 characters or less
+        if (name.trim() === "" || name.length > 20) {
+          alert(
+            "Tourist name should not be blank and should be 20 characters or less."
+          );
+          return false;
+        }
+        return true;
+      }
+
+      function validateAge(age) {
+        // check if age is selected
+        if (age === "") {
+          alert("Please select tourist age.");
+          return false;
+        }
+        return true;
+      }
+
+      function validateTravel(travel) {
+        // check if travel mode is selected
+        if (travel === "") {
+          alert("Please select mode of travel.");
+          return false;
+        }
+        return true;
+      }
+    </script>
+  </body>
+</html>

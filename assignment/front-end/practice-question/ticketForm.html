@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Load Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <title>Ticket Reservation</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Ticket Reservation</h1>
+      <form id="ticket-form" action="#" method="post">
+        <div class="form-group">
+          <label for="tourist-name">Tourist Name (20 characters max):</label>
+          <input
+            type="text"
+            id="tourist-name"
+            name="tourist-name"
+            maxlength="20"
+            class="form-control" />
+          <span id="tourist-name-error" class="error form-text"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="tourist-age">Tourist Age:</label>
+          <select id="tourist-age" name="tourist-age" class="form-control">
+            <option value="" disabled selected>Select age group</option>
+            <option value="child">Child</option>
+            <option value="adult">Adult</option>
+            <option value="senior-citizen">Senior Citizen</option>
+          </select>
+          <span id="tourist-age-error" class="error form-text"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="mode-of-travel">Mode of Travel:</label>
+          <select
+            id="mode-of-travel"
+            name="mode-of-travel"
+            class="form-control">
+            <option value="" disabled selected>Select mode of travel</option>
+            <option value="by-road">By Road</option>
+            <option value="by-air">By Air</option>
+          </select>
+          <span id="mode-of-travel-error" class="error form-text"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+    <!-- Load Bootstrap JS (jQuery and Popper.js are required) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+      const form = document.getElementById("ticket-form");
+      const nameInput = document.getElementById("tourist-name");
+      const ageInput = document.getElementById("tourist-age");
+      const travelInput = document.getElementById("mode-of-travel");
+      const nameError = document.getElementById("tourist-name-error");
+      const ageError = document.getElementById("tourist-age-error");
+      const travelError = document.getElementById("mode-of-travel-error");
+
+      form.addEventListener("submit", function (event) {
+        // prevent form submission if validation fails
+        if (
+          !validateName(nameInput.value, nameError) ||
+          !validateAge(ageInput.value, ageError) ||
+          !validateTravel(travelInput.value, travelError)
+        ) {
+          event.preventDefault();
+        }
+      });
+
+      function validateName(name, error) {
+        // check if name is not blank and is 20 characters or less
+        if (name.trim() === "" || name.length > 20) {
+          error.textContent =
+            "Tourist name should not be blank and should be 20 characters or less.";
+          return false;
+        }
+        error.textContent = "";
+        return true;
+      }
+
+      function validateAge(age, error) {
+        // check if age is selected
+        if (age === "") {
+          error.textContent = "Please select tourist age.";
+          return false;
+        }
+        error.textContent = "";
+        return true;
+      }
+
+      function validateTravel(travel, error) {
+        // check if travel mode is selected
+        if (travel === "") {
+          error.textContent = "Please select mode of travel.";
+          return false;
+        }
+        error.textContent = "";
+        return true;
+      }
+
+      //Display the successful message
+      document.getElementById("success-message").innerHTML =
+        "You have successfully reserved your ticket. Thank you!";
+    </script>
+  </body>
+</html>
