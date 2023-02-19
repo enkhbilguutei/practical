@@ -1,0 +1,73 @@
+<!-- Create a website with horizontal and vertical frames. Top horizontal frame needs to
+show your college's name and logo. Bottom horizontal frame is to be split into two
+vertical frames. The left frame has hyperlinks to pages related to faculty, courses,
+student activities, etc. The right frame shows the corresponding webpage based on
+the link clicked on the left frame.  -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>College Website with Frames</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #header {
+        height: 100px;
+        background-color: #1e90ff;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 100px;
+      }
+      #nav {
+        width: 200px;
+        height: calc(100vh - 100px);
+        float: left;
+        background-color: #f0f0f0;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      #content {
+        height: calc(100vh - 100px);
+        margin-left: 210px;
+      }
+      iframe {
+        border: none;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <img src="college-logo.png" alt="College Logo" style="height: 100%" />
+      College Name
+    </div>
+    <div id="nav">
+      <h2>Navigation</h2>
+      <ul>
+        <li><a href="faculty.html" target="content">Faculty</a></li>
+        <li><a href="courses.html" target="content">Courses</a></li>
+        <li>
+          <a href="student-activities.html" target="content"
+            >Student Activities</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div id="content">
+      <div id="left-frame">
+        <ul>
+          <li><a href="page1.html" target="right-frame">Page 1</a></li>
+          <li><a href="page2.html" target="right-frame">Page 2</a></li>
+          <li><a href="page3.html" target="right-frame">Page 3</a></li>
+        </ul>
+      </div>
+      <div id="right-frame">
+        <iframe name="right-frame"></iframe>
+      </div>
+    </div>
+  </body>
+</html>

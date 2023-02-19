@@ -1,0 +1,89 @@
+<!-- 1. Create an HTML document with following formatting Bold, Italics, Underline,
+Colors, Headings, Title, Font and Font Width, Background, Paragraph, Line Brakes,
+Horizontal Line, Blinking text as well as marquee text. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Example HTML Formatting</title>
+    <style>
+      body {
+        background-color: lightblue;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+      }
+      h1 {
+        color: navy;
+        font-size: 28px;
+        text-decoration: underline;
+      }
+      h2 {
+        color: maroon;
+        font-size: 24px;
+        text-decoration: italic;
+      }
+      p {
+        margin: 10px 0;
+        text-align: justify;
+      }
+      blink {
+        animation: blink 1s linear infinite;
+      }
+      @keyframes blink {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .marquee {
+        overflow: hidden;
+        background-color: yellow;
+        animation: marquee 8s linear infinite;
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Example HTML Formatting</h1>
+    <h2>
+      Bold, Italics, Underline, Colors, Headings, Title, Font and Font Width,
+      Background, Paragraph, Line Brakes, Horizontal Line, Blinking text as well
+      as marquee text
+    </h2>
+    <p>
+      This paragraph demonstrates <b>bold</b>, <i>italic</i>, and
+      <u>underline</u> text, as well as <font color="red">colored</font> text.
+    </p>
+    <p>
+      This paragraph also demonstrates
+      <font size="5">different font sizes</font> and
+      <font face="Courier">different fonts</font>.
+    </p>
+    <p>
+      This paragraph has a <a href="#line-break">line break</a> in it, and this
+      one has a <a href="#horizontal-line">horizontal line</a> below it.
+    </p>
+    <hr id="horizontal-line" />
+    <p>
+      This paragraph has <blink>blinking text</blink>, and this one has
+      <span class="marquee">marquee text</span>.
+    </p>
+    <a id="line-break"><br /></a>
+    <p>This paragraph has a line break before it.</p>
+  </body>
+</html>

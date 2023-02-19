@@ -1,0 +1,24 @@
+<!-- Find the factorial of a number entered by the user. -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Factorial Calculator</title>
+    <script>
+      function findFactorial() {
+        let num = document.getElementById("number").value;
+        let factorial = 1;
+        for (let i = 2; i <= num; i++) {
+          factorial *= i;
+        }
+        document.getElementById("output").innerHTML = num + "! = " + factorial;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Factorial Calculator</h1>
+    <label for="number">Enter a number:</label>
+    <input type="number" id="number" />
+    <button onclick="findFactorial()">Find Factorial</button>
+    <div id="output"></div>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Event-Driven Programs</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+
+      h1 {
+        text-align: center;
+        color: #4d4d4d;
+      }
+
+      form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+      }
+
+      label {
+        display: inline-block;
+        margin-bottom: 10px;
+        color: #4d4d4d;
+      }
+
+      input[type="submit"],
+      input[type="reset"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+      }
+
+      input[type="submit"]:hover,
+      input[type="reset"]:hover {
+        background-color: #45a049;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .result {
+        margin-top: 20px;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #4d4d4d;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript Event-Driven Programs</h1>
+
+    <form id="numListForm">
+      <div class="form-group">
+        <label for="numList"
+          >Enter a list of positive numbers (separated by commas):</label
+        >
+        <input type="text" id="numList" name="numList" required />
+      </div>
+
+      <input type="submit" value="Calculate Sum and Average" />
+      <input type="reset" value="Clear" />
+
+      <div class="result" id="numListResult"></div>
+    </form>
+
+    <script>
+      // Get the form element
+      const numListForm = document.getElementById("numListForm");
+
+      // Add event listener for form submission
+      numListForm.addEventListener("submit", (event) => {
+        event.preventDefault(); // Prevent form from submitting
+
+        // Get the list of numbers entered by the user
+        let numList = [];
+        let num = prompt("Enter a positive number (or 0 to finish):");
+        while (num !== "0") {
+          num = Number(num);
+          if (num > 0) {
+            numList.push(num);
+          }
+          num = prompt("Enter a positive number (or 0 to finish):");
+        }
+
+        // Calculate the sum and average of the positive numbers
+        const sum = numList.reduce((acc, num) => acc + num, 0);
+        const avg = sum / numList.length;
+
+        // Display the result
+        const resultText = `Sum: ${sum}<br>Average: ${avg.toFixed(2)}`;
+        const numListResult = document.getElementById("numListResult");
+        numListResult.innerHTML = resultText;
+      });
+    </script>
+  </body>
+</html>
