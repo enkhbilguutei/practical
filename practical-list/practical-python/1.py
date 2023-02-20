@@ -20,4 +20,27 @@ print(quadratic_equation_roots(1, 0, -4))  # Should print (2.0, -2.0)
 
 #The function is designed to be clear and easy to read by using informative variable names, concise conditional statements, and docstring to document the function's purpose. The code also uses the built-in math module to calculate the square root of the discriminant.
 
+#Option 2 entered by user. 
+# import math
+
+# # Prompt the user to enter the coefficients of the quadratic equation
+# a = float(input("Enter the coefficient of x^2: "))
+# b = float(input("Enter the coefficient of x: "))
+# c = float(input("Enter the constant term: "))
+
+# # Compute the discriminant
+# discriminant = b**2 - 4*a*c
+
+# # Compute the roots of the equation
+# if discriminant > 0:
+#     root1 = (-b + math.sqrt(discriminant)) / (2*a)
+#     root2 = (-b - math.sqrt(discriminant)) / (2*a)
+#     print("The roots are real and distinct: {} and {}".format(root1, root2))
+# elif discriminant == 0:
+#     root = -b / (2*a)
+#     print("The root is real and repeated: {}".format(root))
+# else:
+#     real_part = -b / (2*a)
+#     imaginary_part = math.sqrt(-discriminant) / (2*a)
+#     print("The roots are complex conjugates: {}+{}i and {}-{}i".format(real_part, imaginary_part, real_part, imaginary_part))
 

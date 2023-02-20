@@ -2,6 +2,19 @@
 # j. Check if ’n’is prime
 # k. Generate all prime numbers till ‘n’
 # l. Generate first ‘n’ prime numbers This program may be done using functions
+# def is_prime(n):
+#     """Return True if n is prime, False otherwise"""
+#     if n <= 1:
+#         return False
+#     for i in range(2, int(n**0.5)+1):
+#         if n % i == 0:
+#             return False
+#     return True
+
+# # Test the function with sample inputs
+# n = 7
+# print(is_prime(n))
+# —------------------------------------------------------------------------------
 import math
 
 def is_prime(n):
@@ -48,6 +61,7 @@ print(f"All prime numbers till {num}: {primes_till_num}")
 n = int(input("Enter the value of n: "))
 first_n_primes = generate_first_n_primes(n)
 print(f"First {n} prime numbers: {first_n_primes}")
+
 
 
 

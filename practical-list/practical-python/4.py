@@ -1,40 +1,22 @@
 # . WAP that accepts a character and performs the following:
 # a. print whether the character is a letter or numeric digit or a special character
 # b. if the character is a letter, print whether the letter is uppercase or lowercase
-# 44 | P a g e
 # c. if the character is a numeric digit, prints its name in text (e.g., if input is 9,
 # output is NINE)
+# Get input character from user
 
-def char_info(c):
-    """Prints information about the given character"""
-    if c.isalpha():
-        if c.isupper():
-            print(f"{c} is an uppercase letter.")
-        else:
-            print(f"{c} is a lowercase letter.")
-    elif c.isdigit():
-        print(f"{c} is a numeric digit ({digit_to_text(c)}).")
+char = input("Enter a character: ")
+
+# Check if character is a letter, a digit or a special character
+if char.isalpha():
+    # Check if letter is uppercase or lowercase
+    if char.isupper():
+        print("The character is an uppercase letter.")
     else:
-        print(f"{c} is a special character.")
-
-def digit_to_text(d):
-    """Converts a digit character to its corresponding text representation"""
-    text = {
-        '0': 'ZERO',
-        '1': 'ONE',
-        '2': 'TWO',
-        '3': 'THREE',
-        '4': 'FOUR',
-        '5': 'FIVE',
-        '6': 'SIX',
-        '7': 'SEVEN',
-        '8': 'EIGHT',
-        '9': 'NINE'
-    }
-    return text.get(d)
-
-# Example usage
-char_info('a')  # lowercase letter
-char_info('B')  # uppercase letter
-char_info('5')  # numeric digit
-char_info('$')  # special character
+        print("The character is a lowercase letter.")
+elif char.isdigit():
+    # Convert digit to text and print
+    digit_text = ["ZERO", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"]
+    print("The character is a digit, and its name in text is:", digit_text[int(char)])
+else:
+    print("The character is a special character.")

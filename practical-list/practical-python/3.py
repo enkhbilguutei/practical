@@ -16,3 +16,16 @@ print("Pyramid:")
 pyramid(n)
 print("Reverse Pyramid:")
 reverse_pyramid(n)
+
+
+#Entered by user 
+# Get user input for pyramid height
+# height = int(input("Enter pyramid height: "))
+
+# # Create pyramid
+# for i in range(1, height+1):
+#     print(" "*(height-i) + "*"*(2*i-1))
+
+# # Create reverse pyramid
+# for i in range(height, 0, -1):
+#     print(" "*(height-i) + "*"*(2*i-1))

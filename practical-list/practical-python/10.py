@@ -7,22 +7,24 @@ class Point:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        
+    
     def __str__(self):
         return f"({self.x}, {self.y})"
     
     def distance(self, other):
-        return math.sqrt((self.x - other.x) ** 2 + (self.y - other.y) ** 2)
+        return math.sqrt((self.x - other.x)**2 + (self.y - other.y)**2)
 
-# create two Point objects
-p1 = Point(0, 0)
-p2 = Point(3, 4)
+# Input two point objects from user
+x1, y1 = map(int, input("Enter the coordinates of point 1 (separated by a space): ").split())
+x2, y2 = map(int, input("Enter the coordinates of point 2 (separated by a space): ").split())
+p1 = Point(x1, y1)
+p2 = Point(x2, y2)
 
-# print the objects
-print(p1)   # output: (0, 0)
-print(p2)   # output: (3, 4)
+# Print the two point objects
+print("Point 1:", p1)
+print("Point 2:", p2)
 
-# calculate the distance between the two points
-distance = p1.distance(p2)
-print(distance)   # output: 5.0
+# Calculate and print the distance between the two points
+dist = p1.distance(p2)
+print("Distance between the two points:", dist)
 
