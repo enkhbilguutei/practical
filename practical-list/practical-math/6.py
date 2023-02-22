@@ -1,22 +1,31 @@
 #Generate basis of column space, null space, row space and left null space of a matrix space 
-
 import numpy as np
 
-def basis_of_matrix_spaces(matrix):
-    u, s, vh = np.linalg.svd(matrix)
-    
-    # column space basis
-    column_space_basis = vh.T[:, :np.sum(s > 1e-12)]
-    
-    # null space basis
-    null_space_basis = vh.T[:, np.sum(s > 1e-12):]
-    
-    # row space basis
-    row_space_basis = u[:, :np.sum(s > 1e-12)].T
-    
-    # left null space basis
-    left_null_space_basis = u[:, np.sum(s > 1e-12):]
-    
-    return column_space_basis, null_space_basis, row_space_basis, left_null_space_basis
+# Define the matrix
+A = np.array([[1, 2, 3],
+              [2, 5, 3],
+              [1, 0, 8]])
 
-#Note: The value 1e-12 is used as a tolerance threshold to determine the rank of the matrix. It can be adjusted as needed.
+# Column space
+C = np.linalg.matrix_rank(A)
+col_space_basis = A[:, :C]
+col_space_basis = np.linalg.qr(col_space_basis)[0]
+print("Basis of column space:", col_space_basis)
+
+# Null space
+null_space_basis = np.linalg.qr(A.T)[0][:, C:]
+print("Basis of null space:", null_space_basis)
+
+# Row space
+row_space_basis = np.linalg.qr(A)[0][:C, :]
+print("Basis of row space:", row_space_basis)
+
+# Left null space
+left_null_space_basis = np.linalg.qr(A.T)[0][:, :C]
+left_null_space_basis = left_null_space_basis.T
+print("Basis of left null space:", left_null_space_basis)
+
+
+# In this code, we use the numpy.linalg.matrix_rank() function to find the rank of the matrix, which gives us the number of pivot columns or pivot rows. We then use the numpy.linalg.qr() function to compute the QR decomposition of the matrix. The Q matrix of the QR decomposition contains an orthonormal basis for the column space or row space, depending on whether we apply it to the original matrix or its transpose. The R matrix of the QR decomposition contains information about the linearly independent vectors in the null space or left null space.
+
+# Note that the basis vectors returned by numpy.linalg.qr() are not necessarily normalized. We can normalize them by dividing each vector by its Euclidean norm to obtain an orthonormal basis.

@@ -10,4 +10,5 @@ grad_x, grad_y = np.gradient(scalar_field)
 
 # print the results
 print("Gradient in x-direction:\n", grad_x)
-print("Gradient in y-direction:\n", grad_y)
+print("Gradient in y-direction:\n", grad_y) 
+

@@ -1,30 +1,28 @@
 #Generate the matrix into echelon form and find its rank. 
+import numpy as np
 
-def echelon_form_and_rank(A):
-    m, n = len(A), len(A[0])
-    r = 0
-    for c in range(n):
-        if r >= m:
+# Define the matrix
+matrix = np.array([[1, 2, 3],
+                   [4, 5, 6],
+                   [7, 8, 9]], dtype=float)
+
+# Perform Gaussian elimination to transform matrix to echelon form
+pivots = 0
+for j in range(matrix.shape[1]):
+    pivot_found = False
+    for i in range(pivots, matrix.shape[0]):
+        if matrix[i][j] != 0:
+            matrix[[i, pivots]] = matrix[[pivots, i]]
+            pivot_found = True
             break
-        for i in range(r, m):
-            if A[i][c] != 0:
-                A[i], A[r] = A[r], A[i]
-                break
-        else:
-            continue
-        pivot = A[r][c]
-        A[r] = [x / pivot for x in A[r]]
-        for i in range(r + 1, m):
-            if A[i][c] != 0:
-                scale = A[i][c]
-                A[i] = [A[i][j] - scale * A[r][j] for j in range(n)]
-        r += 1
-    return A, r
+    if pivot_found:
+        for i in range(pivots+1, matrix.shape[0]):
+            factor = matrix[i][j] / matrix[pivots][j]
+            matrix[i] -= factor * matrix[pivots]
+        pivots += 1
 
-
-A = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-echelon_form, rank = echelon_form_and_rank(A)
-print("Echelon form:")
-for row in echelon_form:
-    print(row)
-print("Rank:", rank)
+# Calculate rank of matrix based on number of pivot elements
+rank = pivots
+print("Matrix in echelon form:")
+print(matrix)
+print("Rank of matrix:", rank)

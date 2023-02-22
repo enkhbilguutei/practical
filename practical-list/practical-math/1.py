@@ -1,33 +1,36 @@
-#Write a python program to solve the following 
-
-#This program uses the numpy library to perform the matrix operations. The np.array function creates a numpy array, which is essentially a matrix in numpy. The np.transpose function is used to perform the transpose operation, and np.conj function is used to calculate the conjugate of the matrix. The .T operator is used to transpose the result of the conjugate operation, effectively giving us the conjugate transpose of the matrix.
+# Create and transform vectors and matrices (the transpose vector (matrix) conjugate
+# transpose of a vector (matrix))
 
 import numpy as np
 
-def main():
-    # Create a vector
-    vector = np.array([1, 2, 3])
-    print("Vector:", vector)
+# create a vector
+vector = np.array(input("Enter a vector (separated by spaces): ").split(), dtype=np.float64)
 
-    # Create a matrix
-    matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-    print("Matrix:", matrix)
 
-    # Transpose of a vector
-    vector_transpose = np.transpose(vector)
-    print("Transpose of the vector:", vector_transpose)
+rows, cols = map(int, input("Enter the dimensions of the matrix (separated by a space): ").split())
+matrix = np.zeros((rows, cols), dtype=np.complex128)
+for i in range(rows):
+    row_input = input(f"Enter row {i+1} of the matrix (separated by spaces): ")
+    row = np.array(row_input.split(), dtype=np.complex128)
+    matrix[i, :] = row
 
-    # Transpose of a matrix
-    matrix_transpose = np.transpose(matrix)
-    print("Transpose of the matrix:", matrix_transpose)
+# perform transformations
+transpose_vector = vector.T
+conjugate_transpose_vector = vector.conj().T
+transpose_matrix = matrix.T
+conjugate_transpose_matrix = matrix.conj().T
 
-    # Conjugate transpose of a vector
-    vector_conjugate_transpose = np.conj(vector).T
-    print("Conjugate transpose of the vector:", vector_conjugate_transpose)
+# print the results
+print("Vector:", vector)
+print("Transpose of vector:", transpose_vector)
+print("Conjugate transpose of vector:", conjugate_transpose_vector)
+print("Matrix:\n", matrix)
+print("Transpose of matrix:\n", transpose_matrix)
+print("Conjugate transpose of matrix:\n", conjugate_transpose_matrix)
 
-    # Conjugate transpose of a matrix
-    matrix_conjugate_transpose = np.conj(matrix).T
-    print("Conjugate transpose of the matrix:", matrix_conjugate_transpose)
 
-if __name__ == "__main__":
-    main()
+# In this code, we use the NumPy library to create and manipulate vectors and matrices. We ask the user to input the elements of the vector and matrix, and we use NumPy's array function to convert the input strings into arrays with the appropriate data types (np.float64 for the vector, and np.complex128 for the matrix, since the user may input complex numbers).
+
+# To create the matrix, we use a loop to input each row of the matrix separately, and then use NumPy's indexing syntax to assign each row to the appropriate row of the matrix.
+
+# We then use NumPy's T attribute to compute the transpose of the vector and matrix, and the conj method to compute the conjugate of the matrix elements. Finally, we print the original and transformed vectors and matrices.

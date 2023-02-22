@@ -1,5 +1,6 @@
 # Application of Linear algebra: Coding and decoding of messages using nonsingular
 # matrices.
+# eg code “Linear Algebra is fun” and then decode it.
 
 import numpy as np
 
