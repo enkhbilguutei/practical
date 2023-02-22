@@ -2,18 +2,12 @@
   "configurations": [
     {
       "name": "windows-gcc-x64",
-      "includePath": [
-        "${workspaceFolder}/**"
-      ],
-      "defines": [
-        "_DEBUG",
-        "UNICODE",
-        "_UNICODE"
-      ],
+      "includePath": ["${workspaceFolder}/**"],
+      "defines": ["_DEBUG", "UNICODE", "_UNICODE"],
       "intelliSenseMode": "windows-gcc-x64",
       "cStandard": "${default}",
       "cppStandard": "${default}",
-      "compilerPath": "gcc"
+      "compilerPath": ""
     }
   ],
   "version": 4
