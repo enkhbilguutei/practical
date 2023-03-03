@@ -1,0 +1,47 @@
+<html>: the root element that all other elements are contained within.
+<head>: contains metadata about the HTML document.
+<title>: specifies the title of the HTML document.
+<body>: contains the visible content of the HTML document.
+<header>: represents introductory content at the top of a page or section.
+<nav>: represents a collection of navigation links.
+<main>: represents the main content of the document.
+<article>: represents a self-contained composition, such as a blog post or news article.
+<section>: represents a section of a document, typically with a heading.
+<aside>: represents content that is tangentially related to the main content of the document.
+<footer>: represents the footer of a document or section.
+<h1> to <h6>: heading elements of different levels, used to indicate the importance of a section.
+<p>: represents a paragraph of text.
+<ul>: represents an unordered list of items.
+<ol>: represents an ordered list of items.
+<li>: represents a list item.
+<a>: represents a hyperlink.
+<img>: represents an image.
+<video>: represents a video.
+<audio>: represents an audio file.
+<source>: specifies multiple sources for media elements.
+<iframe>: represents an inline frame.
+<table>: represents a table of data.
+<tr>: represents a table row.
+<th>: represents a table header cell.
+<td>: represents a table data cell.
+<form>: represents a form to be filled out by a user.
+<input>: represents an input field within a form.
+<button>: represents a clickable button.
+<select>: represents a drop-down list of options.
+<option>: represents an option within a drop-down list.
+<label>: represents a label for an input field.
+<textarea>: represents a multi-line input field.
+<canvas>: represents a canvas on which to draw graphics.
+<svg>: represents an SVG image.
+<progress>: represents the progress of a task.
+<meter>: represents a measurement within a known range.
+<blockquote>: represents a long quotation.
+<cite>: represents the title of a work being cited.
+<abbr>: represents an abbreviation.
+<code>: represents a fragment of computer code.
+<kbd>: represents keyboard input.
+<var>: represents a variable in computer code.
+<sub>: represents subscripted text.
+<sup>: represents superscripted text.
+<hr>: represents a horizontal rule or divider.
+<br>: represents a line break.

@@ -6,14 +6,14 @@
 
 # Input the tuple from user
 t1 = tuple(map(int, input("Enter the tuple t1: ").split()))
-
+#adsjfksdjfjdskfjsjdfjsdoijfo
 # Print half the values of the tuple in one line and the other half in the next line
 n = len(t1)
 mid = n // 2
 print(t1[:mid])
 print(t1[mid:])
 
-# Print another tuple whose values are even numbers in the given tuple
+# Print another tuple whose values are even numbers in the give
 t2 = tuple(filter(lambda x: x%2 == 0, t1))
 print(t2)
 
