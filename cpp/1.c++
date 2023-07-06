@@ -1,1 +1,0 @@
-// Write a program to compute the sum of the first n terms of the following series:
